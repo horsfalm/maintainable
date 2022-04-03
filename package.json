@@ -1,0 +1,49 @@
+{
+  "dependencies": {
+    "concurrently": "^7.1.0",
+    "express": "^4.17.3",
+    "gh-pages": "^3.2.3",
+    "graphql": "^16.3.0",
+    "jsonwebtoken": "^8.5.1",
+    "jwt-decode": "^3.1.2",
+    "node": "^17.7.2",
+    "nodemon": "^2.0.15",
+    "react": "^17.0.2",
+    "react-router-dom": "^5.3.0",
+    "web-vitals": "^2.1.4"
+  },
+  "name": "maintainable",
+  "version": "1.0.0",
+  "description": "Project 3",
+  "main": "index.js",
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+  "development": [
+    "last 1 chrome version",
+    "last 1 firefox version",
+    "last 1 safari version"
+  ]
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/horsfalm/maintainable.git"
+  },
+  "author": "Abdurraouf Sadi, Alik Margaryan, Chuong Vo, Mark Horsfall, Tri Nguyen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/horsfalm/maintainable/issues"
+  },
+  "homepage": "https://horsfalm.github.io/maintainable"
+}
