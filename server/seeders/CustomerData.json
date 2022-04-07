@@ -1,0 +1,47 @@
+[
+    {
+        "username":"castomer0001",
+        "email":"castomer0001@gmail.com",
+        "phonenumber":"74763591455",
+        "streetname":"castomer0001 Streetname",
+        "city":"castomer0001 City",
+        "region":"castomer0001 Region",
+        "postCode":"castomer0001 Zip"
+    },
+    {
+        "username":"castomer0002",
+        "email":"castomer0002@gmail.com",
+        "phonenumber":"5584454544",
+        "streetname":"castomer0002 Streetname",
+        "city":"castomer0002 City",
+        "region":"castomer0002 Region",
+        "postCode":"castomer0002 Zip"
+    },
+    {
+        "username":"castomer0003",
+        "email":"castomer0003@gmail.com",
+        "phonenumber":"54646776879",
+        "streetname":"castomer0003 Street",
+        "city":"castomer0003 City",
+        "region":"castomer0003 Region",
+        "postCode":"castomer0003 Zip"
+    },
+    {
+        "username":"castomer0004",
+        "email":"castomer0004@gmail.com",
+        "phonenumber":"7875564441",
+        "streetname":"castomer0004 Street",
+        "city":"castomer0004 Sity",
+        "region":"castomer0004 Region",
+        "postCode":"castomer0004 Zip"
+    },
+    {
+        "username":"castomer0005",
+        "email":"castomer0005@gmail.com",
+        "phonenumber":"78496541514",
+        "streetname":"castomer0005 Street",
+        "city":"castomer0005 City",
+        "region":"castomer0005 Region",
+        "postCode":"castomer0005 Zip"
+    }
+]
