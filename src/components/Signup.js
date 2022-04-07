@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
 
-function Signup() {
+const Signup = () => {
     return (
-        <div>
-            <h1>Sign Up and get started</h1>
+        <div
+            style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100vh'
+                
+            }}
+        >
+            <h1 className="is-size-2">Sign up Page</h1>
         </div>
-    )
-}
+    );
+};
 
 export default Signup;

@@ -6,12 +6,13 @@ const Home = () => {
     <div
       style={{
         display: 'flex',
-        justifyContent: 'Right',
+        justifyContent: 'Center',
         alignItems: 'Right',
-        height: '100vh'
+        height: '100vh',
+        FontSize: '100px'
       }}
     >
-      <h1>Welcome to AcPortfolio</h1>
+      <h1 className="is-size-2">Welcome to "Name Of the Company"</h1>
     </div>
   );
 };

@@ -14,34 +14,34 @@ const Navbar = () => {
         <>
            <Nav>
             <NavLogo to="/">
-                Logo
+                Maintenance Machine
             </NavLogo>
             <Bars />
 
             <NavMenu>
                 <NavLink 
                   to="/" 
-                  activeStyle={{ color:'black' }}
+                  activeStyle={{ color:'white' }}
                 >
                     Home
                 </NavLink>
                 <NavLink 
                   to="/About" 
-                  activeStyle={{ color: 'black' }}
+                  activeStyle={{ color: 'white' }}
                 >
                     About
                 </NavLink>
                 <NavLink 
                   to="/Contact" 
-                  activeStyle={{ color: 'black' }}
+                  activeStyle={{ color: 'white' }}
                 >
                     Contact
                 </NavLink>
                 <NavLink 
                   to="/Signin" 
-                  activeStyle={{ color: 'black' }}
+                  activeStyle={{ color: 'white' }}
                 >
-                    Login
+                    Sign In
                 </NavLink>
                 <NavBtn>
                     <NavBtnLink to="/Signup">Sign Up</NavBtnLink>                

@@ -1,11 +1,19 @@
-import React from 'react'
+import React from "react";
 
-function Signin() {
+const Signin = () => {
     return (
-        <div>
-            <h1>Sign In</h1>
+        <div
+            style={{
+                display: 'flex',
+                justifyContent: 'center',
+                alignItems: 'center',
+                height: '100vh'
+                
+            }}
+        >
+            <h1 className="is-size-2">Sign in Page</h1>
         </div>
-    )
-}
+    );
+};
 
 export default Signin;
