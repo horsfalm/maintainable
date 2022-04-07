@@ -1,7 +1,18 @@
-import React from "react";
+import React from 'react';
 
-function Customer() {
-  return <h1>Customer </h1>;
-}
+const Customer = () => {
+return (
+	<div
+	style={{
+		display: 'flex',
+		justifyContent: 'Right',
+		alignItems: 'Right',
+		height: '100vh'
+	}}
+	>
+	<h1>Customer</h1>
+	</div>
+);
+};
 
 export default Customer;

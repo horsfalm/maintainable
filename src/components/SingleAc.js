@@ -1,7 +1,18 @@
-import React from "react";
+import React from 'react';
 
-function SingleAc() {
-  return <h1>SingleAc</h1>;
-}
+const SingleAc = () => {
+return (
+	<div
+	style={{
+		display: 'flex',
+		justifyContent: 'Right',
+		alignItems: 'Right',
+		height: '100vh'
+	}}
+	>
+	<h1>SingleAc</h1>
+	</div>
+);
+};
 
 export default SingleAc;
