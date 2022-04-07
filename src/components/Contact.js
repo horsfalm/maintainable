@@ -45,27 +45,27 @@ function Contact() {
 
   return (
     <div>
-      <p className="content is-medium">Contact Me</p>
+      <p className="content is-medium column is-half is-offset-one-quarter">Contact Me</p>
       <hr />
       <form id="contact-form" onSubmit={handleSubmit}>
-        <div className="field">
+        <div class="field column is-half is-offset-one-quarter">
           <label className="label" htmlFor="name">Name</label>
           <input className="input" type="text" name="name" defaultValue={name} onBlur={handleChange} />
         </div>
-        <div className="field">
+        <div className="field column is-half is-offset-one-quarter">
           <label className="label" htmlFor="email">Email Address</label>
           <input className="input" type="email" name="email" defaultValue={email} onBlur={handleChange} />
         </div>
-        <div className="field">
+        <div className="field column is-half is-offset-one-quarter">
           <label className="label" htmlFor="message">Message</label>
           <textarea className="textarea" name="message" rows="5" defaultValue={message} onBlur={handleChange} />
         </div>
         {errorMessage && (
-          <div>
+          <div class="field column is-half is-offset-one-quarter">
             <p className="is-danger">{errorMessage}</p>
           </div>
         )}
-        <button className="button is-medium is-primary is-fullwidth" data-testid="button" type="submit">Submit</button>
+        <button className="button is-medium is-primary is-fullwidth column is-half is-offset-one-quarter" data-testid="button" type="submit">Submit</button>
       </form>
     </div>
   );
