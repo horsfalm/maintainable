@@ -4,6 +4,7 @@
     "express": "^4.17.3",
     "gh-pages": "^3.2.3",
     "graphql": "^16.3.0",
+    "init": "^0.1.2",
     "jsonwebtoken": "^8.5.1",
     "jwt-decode": "^3.1.2",
     "node": "^17.7.2",
