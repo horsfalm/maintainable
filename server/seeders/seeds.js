@@ -1,48 +1,69 @@
+const faker = require('faker');
+
 const db = require('../config/connection');
-const { Tech, Employee, Customer, Ac } = require('../models');
-
-const AcData = require('./AcData.json');
-const CustomerData = require('./CustomerData.json');
-const EmployeeData = require('./EmployeeData.json');
-const TechData = require('./TechData.json');
-
+const { User, Customer, Ac } = require('../models');
 
 db.once('open', async () => {
-  try {
-    // clean database
-    await Tech.deleteMany({});
-    await Ac.deleteMany({});
-    await Customer.deleteMany({});
-    await Employee.deleteMany({});
-    
+  await User.deleteMany({});
+  await Customer.deleteMany({});
+  await Ac.deleteMany({});
 
-    // bulk create each model
-    await Tech.create(TechData);
-    await Ac.create(AcData);
-    await Customer.create(CustomerData);
-    await Employee.create(EmployeeData);
+  // create users
+  const userData = [];
 
-  } catch (err) {
-    console.error(err);
-    process.exit(1);
+  for (let i = 0; i < 3; i += 1) {
+    const username = faker.internet.userName();
+    const email = faker.internet.email(username);
+    const password = faker.internet.password();
+
+    userData.push({ username, email, password });
+  }
+
+  const createdUsers = await User.collection.insertMany(userData);
+
+  // create customers
+  const customerData = [];
+
+  for (let i = 0; i < 5; i += 1) {
+    const name = faker.name.findName();
+    const address = faker.address.streetAddress();
+    const phone = faker.phone.phoneNumberFormat();
+
+    customerData.push({ name, address, phone });
+  }
+
+  const createdCustomers = await Customer.collection.insertMany(customerData);
+
+    // create acs
+    let createdAcs = [];
+    for (let i = 0; i < 10; i += 1) {
+      const acName = faker.lorem.words(Math.round(Math.random() * 1) + 1);
+
+      const brandArr = ["Daikin", "Mitsubishi Electric", "Mitsubishi Heavy Industries", "LG", "Fujitsu", "Panasonic"];
+      
+      function random() {
+        return Math.random() * (6 - 1) + 1;
+      }
+      
+      const acBrand = brandArr[Math.floor(random(1, 6))-1];
+
+      const outModel = faker.random.alphaNumeric(8);
+      const outSerial = faker.random.alphaNumeric(10);
+
+      const inModel = faker.random.alphaNumeric(8);
+      const inSerial = faker.random.alphaNumeric(10);
+  
+      const randomCustomerIndex = Math.floor(Math.random() * createdCustomers.ops.length);
+      const { _id: customerId } = createdCustomers.ops[randomCustomerIndex];
+  
+      const createdAc = await Ac.create({ acName, acBrand, outModel, outSerial, inModel, inSerial });
+  
+      const updatedCustomer = await Customer.updateOne(
+        { _id: customerId },
+        { $push: { acs: createdAc._id } }
+      );
   }
 
   console.log('all done!');
   process.exit(0);
 });
-
-
-//   for (newClass of classes) {
-//     // randomly add each class to a school
-//     const tempSchool = schools[Math.floor(Math.random() * schools.length)];
-//     tempSchool.classes.push(newClass._id);
-//     await tempSchool.save();
-
-//     // randomly add a professor to each class
-//     const tempProfessor = professors[Math.floor(Math.random() * professors.length)];
-//     newClass.professor = tempProfessor._id;
-//     await newClass.save();
-
-//     // reference class on professor model, too
-//     tempProfessor.classes.push(newClass._id);
-//     await tempProfessor.save();

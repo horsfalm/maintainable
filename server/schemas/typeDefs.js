@@ -1,95 +1,52 @@
-// import the gql tagged template function
 const { gql } = require('apollo-server-express');
 
-// create our typeDefs
 const typeDefs = gql`
-  type Tech {
-    _id: ID
-    username: String
-    email: String
-  }
-  type Employee {
-    _id: ID
-    username: String
-    email: String
-  }
-  type Customer {
-    _id: ID
-    username: String
-    email: String
-    phonenumber:String
-    streetname:String
-    city:String
-    region:String
-    postCode:String
-    acs: [Ac]
-  }
-  type Ac {
-    _id: ID
-    createdAt: String
-    inDoorAcBarnd: String,
-    inDoorModel:String,
-    inDoorserialNumber: String,
-    outDoorAcBarnd: String,
-    outDoorModel:String,
-  outDoorserialNumber: String,
-   
-  }
-  type Auth{
+type Auth {
     token: ID!
-    tech: Tech
-    employee: Employee
-    customer: Customer
-    ac : Ac
-  }
-  
-  type Query{
-    meTech: Tech
-    meEmployee: Employee
-   
-    acs:[Ac]
+    user: User
+}
+
+type Customer {
+    _id: ID
+    name: String
+    address: String
+    phone: String
+    acs: [Ac]
+}
+
+type Ac {
+    _id: ID
+    acName: String
+    acBrand: String
+    outModel: String
+    outSerial: String
+    inModel: String
+    inSerial: String
+    createdAt: String
+}
+
+type User {
+    _id: ID
+    username: String
+    email: String
+}
+
+type Query {
+    me: User
+    customers: [Customer]
+    customer(_id: ID!): Customer
+    acs: [Ac]
     ac(_id: ID!): Ac
-   
-    techs: [Tech]
-    techByName(username: String!): Tech
-    techById(_id: ID!): Tech
+    users: [User]
+    user(username: String!): User
+}
 
-    employees:[Employee]
-    employeeByName(username: String!): Employee
-    employeeById(_id: ID!): Employee
-
-    customers:[Customer]
-    customerByName(username: String!): Customer
-    customerById(_id: ID!): Customer
-
-
-  
-  }
-
-  type Mutation {
-    loginTech(email: String!, password: String!): Auth
-    loginEmployee(email: String!, password: String!): Auth
-    addTech(username: String!, email: String!, password: String!): Auth
-    addEmployee(username: String!, 
-                email: String!, 
-                password: String!): Auth
-    addCustomer(username: String!, 
-                email: String!, 
-                phonenumber:String!, 
-                streetname:String!, 
-                city:String!, 
-                region:String!, 
-                postCode:String!): Auth
-    addAc(customerId:ID!,
-          inDoorAcBarnd: String!,
-          inDoorModel:String!,
-          inDoorserialNumber: String!,
-          outDoorAcBarnd: String!,
-          outDoorModel: String!,
-          outDoorserialNumber: String!): Auth
-
-  }
+type Mutation {
+    login(email: String! password: String!): Auth
+    addUser(username: String!, email: String!, password: String!): Auth
+    addCustomer(name: String!, address: String!, phone: String!): Customer
+    addAc(customerId:ID!, acName: String!, acBrand: String!, outModel: String!, outSerial: String!, inModel: String!, inSerial: String!): Ac
+}
 `;
 
-// export the typeDefs
 module.exports = typeDefs;
