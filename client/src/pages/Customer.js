@@ -2,10 +2,11 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_CUSTOMER } from '../utils/queries';
+import { valueToObjectRepresentation } from '@apollo/client/utilities';
 
 const Customer = props => {
     const { id: customerId } = useParams();
-console.log(customerId);
+
     const { loading, data } = useQuery(QUERY_CUSTOMER, {
         variables: { _id: customerId }
     });
@@ -15,6 +16,7 @@ console.log(customerId);
     if (loading) {
         return <div>Loading...</div>;
     }
+
 
 
     return (
@@ -28,7 +30,8 @@ console.log(customerId);
             <p>{customer.phone}</p>
           </div>
         </div>
-        {customer.acs.map((ac) => (
+        <div>
+          {customer.acs.map((ac) => (
             <div className="card mb-3">
               <p className="card-header">
                   {ac.acName}
@@ -43,6 +46,7 @@ console.log(customerId);
               </div>
             </div>
           ))}
+        </div>
       </div>
     );
   };
