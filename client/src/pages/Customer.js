@@ -28,19 +28,21 @@ console.log(customerId);
             <p>{customer.phone}</p>
           </div>
         </div>
-        <div className="card mb-3">
-          <p className="card-header">
-              {customer.acs[0].acName}
-          </p>
-          <div className="card-body">
-            <p>ID: {customer.acs[0]._id}</p>
-            <p>Brand: {customer.acs[0].acBrand}</p>
-            <p>Outdoor Model: {customer.acs[0].outModel}</p>
-            <p>Outdoor Serial: {customer.acs[0].outSerial}</p>
-            <p>Indoor Model: {customer.acs[0].inModel}</p>
-            <p>Indoor Serial: {customer.acs[0].inSerial}</p>
-          </div>
-        </div>
+        {customer.acs.map((ac) => (
+            <div className="card mb-3">
+              <p className="card-header">
+                  {ac.acName}
+              </p>
+              <div className="card-body">
+              <p>ID: {ac._id}</p>
+              <p>Brand: {ac.acBrand}</p>
+              <p>Outdoor Model: {ac.outModel}</p>
+              <p>Outdoor Serial: {ac.outSerial}</p>
+              <p>Indoor Model: {ac.inModel}</p>
+              <p>Indoor Serial: {ac.inSerial}</p>
+              </div>
+            </div>
+          ))}
       </div>
     );
   };
