@@ -74,7 +74,7 @@ import {
               onChange={handleChange}
             />
             <MDBBtn className="mb-4" type="submit" block>
-              Sigin in
+              Sign in
             </MDBBtn>
           </form>
           {error && <div>Login failed</div>}

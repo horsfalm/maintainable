@@ -1,8 +1,5 @@
 import React from "react";
-import {
-  MDBInput,
-  MDBBtn,
-} from "mdb-react-ui-kit";
+import { MDBInput, MDBBtn } from "mdb-react-ui-kit";
 
 export default function Loginemployee() {
   return (
@@ -18,7 +15,7 @@ export default function Loginemployee() {
       <div className="container" style={{ marginTop: "100px", width: "50% " }}>
         <div className="row gx-6 ">
           <form>
-            <MDBInput wrapperClass="mb-4" id="form6Example3" label="Usernmae" />
+            <MDBInput wrapperClass="mb-4" id="form6Example3" label="Username" />
             <MDBInput
               wrapperClass="mb-4"
               type="email"
@@ -26,7 +23,7 @@ export default function Loginemployee() {
               label="Email"
             />
             <MDBBtn className="mb-4" type="submit" block>
-              Sigin in
+              Sign in
             </MDBBtn>
           </form>
         </div>
