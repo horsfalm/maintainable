@@ -23,6 +23,13 @@ type Ac {
     inModel: String
     inSerial: String
     createdAt: String
+    reports: [Report]
+}
+
+type Report {
+    _id: ID
+    reportText: String
+    createdAt: String
 }
 
 type User {
@@ -39,6 +46,8 @@ type Query {
     ac(_id: ID!): Ac
     users: [User]
     user(username: String!): User
+    reports: [Report]
+    report(_id: ID!): Report
 }
 
 type Mutation {
@@ -46,6 +55,7 @@ type Mutation {
     addUser(username: String!, email: String!, password: String!): Auth
     addCustomer(name: String!, address: String!, phone: String!): Customer
     addAc(customerId:ID!, acName: String!, acBrand: String!, outModel: String!, outSerial: String!, inModel: String!, inSerial: String!): Ac
+    addReport(acId: ID!, reportText: String!): Report
 }
 `;
 

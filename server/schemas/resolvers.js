@@ -1,4 +1,4 @@
-const { User, Customer, Ac } = require('../models');
+const { User, Customer, Ac, Report } = require('../models');
 const { AuthenticationError } = require('apollo-server-express');
 const { signToken } = require('../utils/auth');
 
@@ -9,13 +9,19 @@ const resolvers = {
             return Customer.find().sort({ name: -1 }).populate('acs');
         },
         customer: async (parent, { _id }) => {
-            return Customer.findOne({ _id }).populate('acs');
+            return Customer.findOne({ _id }).populate('acs')
         },
         acs: async () => {
-            return Ac.find().sort({ createdAt: -1 })
+            return Ac.find().sort({ createdAt: -1 }).populate('reports')
         },
         ac: async (parent, { _id }) => {
-            return Ac.findOne({ _id })
+            return Ac.findOne({ _id }).populate('reports')
+        },
+        reports: async () => {
+            return Report.find().sort({ createdAt: -1 })
+        },
+        report: async (parent, { _id }) => {
+            return Report.findOne({ _id })
         },
         users: async () => {
             return User.find()
@@ -76,6 +82,18 @@ const resolvers = {
                 await Customer.findByIdAndUpdate({ _id: customer._id }, { $push: { acs:ac._id } }, { new: true });
 
                 return ac;
+            }
+
+            throw new AuthenticationError('You need to be logged in');
+        },
+        addReport: async (parent, args, context) => {
+            if (context.user) {
+                const ac = await Ac.findById({_id: args.acId})
+                const report = await Report.create({ ...args });
+
+                await Ac.findByIdAndUpdate({ _id: ac._id }, { $push: { reports:report._id } }, { new: true });
+
+                return report;
             }
 
             throw new AuthenticationError('You need to be logged in');

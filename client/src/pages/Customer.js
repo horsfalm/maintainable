@@ -2,7 +2,7 @@ import React from 'react';
 import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_CUSTOMER } from '../utils/queries';
-import { valueToObjectRepresentation } from '@apollo/client/utilities';
+import { Link } from 'react-router-dom';
 
 const Customer = props => {
     const { id: customerId } = useParams();
@@ -17,7 +17,7 @@ const Customer = props => {
         return <div>Loading...</div>;
     }
 
-
+    console.log(customer.acs)
 
     return (
       <div>
@@ -34,15 +34,19 @@ const Customer = props => {
           {customer.acs.map((ac) => (
             <div className="card mb-3">
               <p className="card-header">
+                <Link to={`/ac/${ac._id}`}
+                style={{ fontWeight: 700 }}
+                className="text-dark">
                   {ac.acName}
+                </Link>
               </p>
               <div className="card-body">
               <p>ID: {ac._id}</p>
               <p>Brand: {ac.acBrand}</p>
-              <p>Outdoor Model: {ac.outModel}</p>
+              {/* <p>Outdoor Model: {ac.outModel}</p>
               <p>Outdoor Serial: {ac.outSerial}</p>
               <p>Indoor Model: {ac.inModel}</p>
-              <p>Indoor Serial: {ac.inSerial}</p>
+              <p>Indoor Serial: {ac.inSerial}</p> */}
               </div>
             </div>
           ))}

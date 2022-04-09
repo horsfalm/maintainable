@@ -27,7 +27,30 @@ export const QUERY_CUSTOMER = gql`
         inModel
         inSerial
         createdAt
+        reports {
+          _id
+        }
       }
     }
   }
+`;
+
+export const QUERY_AC = gql`
+query getAc($_id: ID!) {
+  ac(_id: $_id) {
+    _id
+    acName
+    acBrand
+    outModel
+    outSerial
+    inModel
+    inSerial
+    createdAt
+    reports {
+      _id
+      reportText
+      createdAt
+    }
+  }
+}
 `;

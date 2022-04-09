@@ -25,7 +25,13 @@ const acSchema = new Schema(
       type: Date,
       default: Date.now,
       get: timestamp => dateFormat(timestamp)
-    }
+    },
+    reports: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Report'
+      }
+    ]
   },
   {
     toJSON: {
