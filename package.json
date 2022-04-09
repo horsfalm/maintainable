@@ -1,20 +1,4 @@
 {
-<<<<<<< HEAD
-  "dependencies": {
-    "concurrently": "^7.1.0",
-    "express": "^4.17.3",
-    "gh-pages": "^3.2.3",
-    "graphql": "^16.3.0",
-    "init": "^0.1.2",
-    "jsonwebtoken": "^8.5.1",
-    "jwt-decode": "^3.1.2",
-    "node": "^17.7.2",
-    "nodemon": "^2.0.15",
-    "react": "^17.0.2",
-    "react-router-dom": "^5.3.0",
-    "react-scripts": "^5.0.0",
-    "web-vitals": "^2.1.4"
-  },
   "name": "maintainable",
   "version": "1.0.0",
   "description": "",
@@ -27,51 +11,9 @@
     "build": "cd client && npm run build"
   },
   "keywords": [],
+  "author": "",
+  "license": "ISC",
   "devDependencies": {
     "concurrently": "^5.1.0"
-  
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/horsfalm/maintainable.git"
-  },
-  "author": "Abdurraouf Sadi, Alik Margaryan, Chuong Vo, Mark Horsfall, Tri Nguyen",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/horsfalm/maintainable/issues"
-  },
-  "homepage": "https://horsfalm.github.io/maintainable"
-}
-=======
-    "name": "Maintainable",
-    "version": "1.0.0",
-    "description": "",
-    "main": "server/server.js",
-    "scripts": {
-      "start": "node server/server.js",
-      "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
-      "install": "cd server && npm i && cd ../client && npm i",
-      "seed": "cd server && npm run seed",
-      "build": "cd client && npm run build"
-    },
-    "keywords": [],
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-      "concurrently": "^5.1.0"
-    }
   }
-  
->>>>>>> 9aeee9202ce54f0bacc947434a74678a7887d723
+}
