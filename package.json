@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "dependencies": {
     "concurrently": "^7.1.0",
     "express": "^4.17.3",
@@ -53,3 +54,24 @@
   },
   "homepage": "https://horsfalm.github.io/maintainable"
 }
+=======
+    "name": "Maintainable",
+    "version": "1.0.0",
+    "description": "",
+    "main": "server/server.js",
+    "scripts": {
+      "start": "node server/server.js",
+      "develop": "concurrently \"cd server && npm run watch\" \"cd client && npm start\"",
+      "install": "cd server && npm i && cd ../client && npm i",
+      "seed": "cd server && npm run seed",
+      "build": "cd client && npm run build"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "devDependencies": {
+      "concurrently": "^5.1.0"
+    }
+  }
+  
+>>>>>>> 9aeee9202ce54f0bacc947434a74678a7887d723

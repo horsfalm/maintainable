@@ -9,31 +9,13 @@ const acSchema = new Schema(
             get: timestamp => dateFormat(timestamp)
         },
         // indoor AC info
-        inDoorAcBarnd: {
-            type: String,
-            required: true
-        },
-        inDoorModel: {
-            type: String,
-            required: true
-        },
-        inDoorserialNumber: {
-            type: String,
-            required: true
-        },
+        inDoorAcBarnd: String,
+        inDoorModel:String,
+        inDoorserialNumber: Number,
         // outdoor AC info
-        outDoorAcBarnd:{
-            type: String,
-            required: true
-        },
-        outDoorModel: {
-            type: String,
-            required: true
-        },
-        outDoorserialNumber: {
-            type: String,
-            required: true
-        }
+        outDoorAcBarnd: String,
+        outDoorModel:String,
+        outDoorserialNumber: Number,
     },
     {
         toJSON: {
