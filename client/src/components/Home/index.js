@@ -22,7 +22,7 @@ export default function Home() {
                 rel='nofollow'
                 target='_blank'
               >
-                Employee Logan
+                Employee Login
               </a>
               <a
                 className='btn btn-outline-light btn-lg m-2'
@@ -30,7 +30,7 @@ export default function Home() {
                 target='_blank'
                 role='button'
               >
-                Technician Logan
+                Technician Login
               </a>
             </div>
           </div>
