@@ -56,6 +56,7 @@ type Mutation {
     addCustomer(name: String!, address: String!, phone: String!): Customer
     addAc(customerId:ID!, acName: String!, acBrand: String!, outModel: String!, outSerial: String!, inModel: String!, inSerial: String!): Ac
     addReport(acId: ID!, reportText: String!): Report
+    removeReport(_id: ID!): Report
 }
 `;
 

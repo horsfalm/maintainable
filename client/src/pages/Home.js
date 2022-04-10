@@ -1,26 +1,19 @@
 import React from 'react';
-import { useQuery } from '@apollo/client';
-import { QUERY_CUSTOMERS } from '../utils/queries';
-import CustomerList from '../components/CustomerList';
 
 const Home = () => {
-  const { loading, data } = useQuery(QUERY_CUSTOMERS);
-  const customers = data?.customers || [];
-  console.log(customers);
-
+  
   return (
-    <main>
-      <div className='flex-row justify-space-between'>
-        <div className='col-12 mb-3'>
-          {loading ? (
-            <div>Loading ...</div>
-          ) : (
-            <CustomerList customers={customers}/>
-          )}
-          </div>
+    <div
+        id='intro-example'
+        className='p-5 text-center bg-image'
+        style={{ backgroundImage: "url('/background-img.png')", height: "600px" }}
+      >
+        <div>
+          <h2 className='mb-3'>Protect Your Client's Air Conditioning Assets</h2>
+        </div>
       </div>
-    </main>
-  );
+  )
+
 };
 
 export default Home;

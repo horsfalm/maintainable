@@ -3,7 +3,7 @@
   --secondary: gray;
   --tertiary: #b2c2c1;
   --quatrinary: #cadbda;
-  --light: lightgray;
+  --light: darkgray;
   --dark: white;
   --error: rgb(228, 46, 1);
   --border-radius: 0.3rem;
@@ -31,7 +31,7 @@ body {
   line-height: 1.5;
   font-size: 20px;
   color: var(--dark);
-  background-color: #f3fffee1;
+  background-color: #c2eec5e1;
 }
 
 h1,
@@ -52,10 +52,12 @@ h1 {
 
 h2 {
   font-size: 2rem;
+  color: var(--primary);
 }
 
 h3 {
   font-size: 1.75rem;
+  color: var(--primary);
 }
 
 h4 {
@@ -64,6 +66,7 @@ h4 {
 
 h5 {
   font-size: 1.25rem;
+  color: var(--primary);
 }
 
 h6 {
@@ -97,7 +100,16 @@ nav a {
 
 nav a:hover {
   color: var(--secondary);
-  background-color: var(--dark);
+  background-color: #00B74A;
+}
+
+i:hover {
+  color: var(--secondary);
+  background-color: #00B74A;
+}
+
+#report {
+  min-height: 500px;
 }
 
 .page-title {
@@ -109,7 +121,8 @@ nav a:hover {
 
 .btn,
 .pill {
-  font-size: 1.3rem;
+  font-size: 1rem;
+  font-weight: bold;
   text-decoration: none;
   padding: 0.5rem 1.2rem;
   margin: 5px 0;
@@ -119,6 +132,8 @@ nav a:hover {
   outline: none;
   background-color: var(--secondary);
   transition: all 0.5s;
+  width: 110px;
+  height: 55px;
 }
 
 .btn:hover,
@@ -127,23 +142,32 @@ nav a:hover {
   background-color: var(--dark);
 }
 
+.btn-header {
+  color: var(--secondary);
+  background-color: #00B74A;
+}
+
 .btn-inline {
   display: inline;
+}
+
+.click:hover {
+  opacity: 0.3;
 }
 
 /* CARDS */
 .card {
   margin: 0 0 20px 0;
-  border: 3px solid var(--dark);
+  border: 3px solid var(--light);
   border-radius: var(--border-radius);
   background-color: var(--light);
-  color: var(--dark);
+  color: var(--light);
 }
 
 .card-header {
-  color: var(--secondary);
+  color: var(--dark);
   margin: 0;
-  background-color: var(--dark);
+  background-color: var(--light);
   padding: 0.625rem;
   border-radius: calc(0.18rem - 1px) calc(0.18rem - 1px) 0 0;
 }
@@ -151,6 +175,8 @@ nav a:hover {
 .card-body {
   padding: 2.5%;
   font-size: 1.4rem;
+  background-color: var(--dark);
+  color: var(--light);
 }
 
 /* FORM */

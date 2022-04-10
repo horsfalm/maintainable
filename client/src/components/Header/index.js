@@ -18,6 +18,8 @@ const Header = () => {
         <nav className="text-center">
           {Auth.loggedIn() ? (
             <>
+              <a><i class="fas fa-search"></i></a>
+              <Link to="/dashboard">Dashboard</Link>
               <a href="/" onClick={logout}>Logout</a>
             </>
           ) : (

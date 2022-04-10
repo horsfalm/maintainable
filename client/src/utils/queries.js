@@ -54,3 +54,23 @@ query getAc($_id: ID!) {
   }
 }
 `;
+
+export const QUERY_REPORTS = gql`
+query {
+  reports {
+    _id
+    reportText
+    createdAt
+  }
+}
+`;
+
+export const QUERY_REPORT = gql`
+query getReport($_id: ID!) {
+  report(_id: $_id) {
+    _id
+    reportText
+    createdAt
+  }
+}
+`;

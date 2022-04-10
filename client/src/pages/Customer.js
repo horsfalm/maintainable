@@ -21,32 +21,29 @@ const Customer = props => {
 
     return (
       <div>
-        <div className="card mb-3">
-          <p className="card-header text-dark" style={{ fontWeight: 700 }} >
-              {customer.name}
-          </p>
-          <div className="card-body">
-            <p>{customer.address}</p>
-            <p>{customer.phone}</p>
-          </div>
-        </div>
+        <div>
+        <h2>{customer.name}</h2>
+        <h5>{customer.address}</h5>
+        <h5>{customer.phone}</h5>
+        <button className="btn ml-auto bg-success">
+            <Link to={`/addac`}>
+            + AC
+            </Link>
+        </button>
+        </div><br />
         <div>
           {customer.acs.map((ac) => (
             <div className="card mb-3">
-              <p className="card-header">
+              <p className="card-header text-dark">
                 <Link to={`/ac/${ac._id}`}
                 style={{ fontWeight: 700 }}
-                className="text-dark">
-                  {ac.acName}
+                >
+                  <div className="click">AC Description: {ac.acName}</div>
                 </Link>
               </p>
               <div className="card-body">
-              <p>ID: {ac._id}</p>
-              <p>Brand: {ac.acBrand}</p>
-              {/* <p>Outdoor Model: {ac.outModel}</p>
-              <p>Outdoor Serial: {ac.outSerial}</p>
-              <p>Indoor Model: {ac.inModel}</p>
-              <p>Indoor Serial: {ac.inSerial}</p> */}
+              <p>AC ID: {ac._id}</p>
+              <p>AC Brand: {ac.acBrand}</p>
               </div>
             </div>
           ))}

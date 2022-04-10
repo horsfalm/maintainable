@@ -26,3 +26,13 @@ export const ADD_AC = gql`
         }
       }
 `;
+
+export const ADD_REPORT = gql`
+  mutation addReport($acId: ID!, $reportText: String!) {
+    addReport(acId: $acId, reportText: $reportText) {
+      _id
+      reportText
+      createdAt
+    }
+  }
+`;

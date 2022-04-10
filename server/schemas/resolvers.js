@@ -97,6 +97,16 @@ const resolvers = {
             }
 
             throw new AuthenticationError('You need to be logged in');
+        },
+        removeReport: async (parent, args, context) => {
+            if (context.user) {
+                const report = await Report.findById({_id: args._id});
+
+                await Report.findByIdAndDelete({_id: report._id});
+
+            }
+
+            throw new AuthenticationError('You need to be logged in');
         }
     }
 };

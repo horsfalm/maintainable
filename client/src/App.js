@@ -7,10 +7,13 @@ import Footer from './components/Footer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import Home from './pages/Home';
 import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
 import NoMatch from './pages/NoMatch';
 import Customer from './pages/Customer';
 import Ac from './pages/Ac';
+import Addac from './pages/Addac';
 import Report from './pages/Report';
+import Addreport from './pages/Addreport';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -42,9 +45,12 @@ function App() {
           <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/customer/:id" component={Customer} />
             <Route exact path="/ac/:id" component={Ac} />
-            <Route exact path="/report" component={Report} />
+            <Route exact path="/addac" component={Addac} />
+            <Route exact path="/report/:id" component={Report} />
+            <Route exact path="/ac/:id/addreport" component={Addreport} />
             <Route component={NoMatch} />
           </Switch>
         </div>
