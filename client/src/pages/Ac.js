@@ -19,9 +19,9 @@ const Ac = props => {
     return (
       <div>
         <div className="card mb-3">
-          <p className="card-header text-dark" style={{ fontWeight: 700 }} >
+          <div className="card-header" style={{ fontWeight: 700 }} >
               AC Location: {ac.acName}
-          </p>
+          </div>
           <div className="card-body">
               <div className="flex-row">
                 <div style={{ width: 800 }}>
@@ -38,13 +38,13 @@ const Ac = props => {
               </div>
               <div className="flex-row">
                 <p>Service Reports:</p>
-              <p style={{ width: 800 }}>{ac.reports.map((report) => (
+              <div style={{ width: 800 }}>{ac.reports.map((report) => (
                 <ul>
                   <li className="click"><Link to={`/report/${report._id}`}>
                   {report.createdAt}</Link></li>
                 </ul>
               ))}
-              </p>
+              </div>
               <button className="btn ml-auto bg-success">
                 <Link to={`/ac/${ac._id}/addreport`}>
                 + Report

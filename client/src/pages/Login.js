@@ -39,10 +39,10 @@ const Login = (props) => {
         <div className='card'>
           <h4 className='card-header'>Login</h4>
           <div className='card-body'>
-            <form onSubmit={handleFormSubmit}>
+            <form className="justify-center justify-space-between-md align-stretch" onSubmit={handleFormSubmit}>
               <input
                 className='form-input'
-                placeholder='Your email'
+                placeholder='Email'
                 name='email'
                 type='email'
                 id='email'
@@ -51,14 +51,14 @@ const Login = (props) => {
               />
               <input
                 className='form-input'
-                placeholder='******'
+                placeholder='********'
                 name='password'
                 type='password'
                 id='password'
                 value={formState.password}
                 onChange={handleChange}
               />
-              <button className='btn d-block w-100' type='submit'>
+              <button className='btn ml-auto w-100 bg-success' type='submit'>
                 Submit
               </button>
             </form>
