@@ -48,7 +48,7 @@ function App() {
             <Route exact path="/dashboard" component={Dashboard} />
             <Route exact path="/customer/:id" component={Customer} />
             <Route exact path="/ac/:id" component={Ac} />
-            <Route exact path="/addac" component={Addac} />
+            <Route exact path="/customer/:id/addac" component={Addac} />
             <Route exact path="/report/:id" component={Report} />
             <Route exact path="/ac/:id/addreport" component={Addreport} />
             <Route component={NoMatch} />
