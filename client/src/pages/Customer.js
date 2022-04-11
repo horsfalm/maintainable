@@ -34,13 +34,13 @@ const Customer = props => {
         <div>
           {customer.acs.map((ac) => (
             <div className="card mb-3">
-              <p className="card-header text-dark">
+              <div className="card-header">
                 <Link to={`/ac/${ac._id}`}
                 style={{ fontWeight: 700 }}
                 >
                   <div className="click">AC Location: {ac.acName}</div>
                 </Link>
-              </p>
+              </div>
               <div className="card-body">
               <p>AC ID: {ac._id}</p>
               <p>AC Brand: {ac.acBrand}</p>

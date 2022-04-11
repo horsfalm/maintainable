@@ -31,8 +31,9 @@ const Addac = () => {
     };
 
     return (
-        <div className='flex-row justify-space-between'>
-            <div className='col-12 mb-3 text-dark'>
+        <div className='card mb-3'>
+            <div className="card-header">Enter AC Details</div>
+            <div className="card-body">
                 <form className="justify-center justify-space-between-md align-stretch" onSubmit={handleFormSubmit}>
                     <input
                         type="text" defaultValue={acName} onChange={handleChange} name="acName"
@@ -64,7 +65,7 @@ const Addac = () => {
                         className='form-input'
                         placeholder='Enter Indoor Unit Serial ...'
                     /><br />
-                    <button className='btn ml-auto bg-success' type='submit'>
+                    <button className='btn ml-auto w-100 bg-success' type='submit'>
                         Submit
                     </button>
                 </form>
