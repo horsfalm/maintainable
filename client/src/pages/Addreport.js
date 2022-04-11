@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link, Redirect, useHistory } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_REPORT } from '../utils/mutations';
 import { QUERY_REPORTS } from '../utils/queries';
@@ -38,7 +39,7 @@ const Addreport = () => {
             });
         
         setText('');
-        setCharacterCount(0)
+        setCharacterCount(0);
         } catch (e) {
             console.error(e);
         }

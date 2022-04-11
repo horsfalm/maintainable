@@ -26,7 +26,7 @@ const Customer = props => {
         <h5>{customer.address}</h5>
         <h5>{customer.phone}</h5>
         <button className="btn ml-auto bg-success">
-            <Link to={`/addac`}>
+            <Link to={`/customer/${customer._id}/addac`}>
             + AC
             </Link>
         </button>
@@ -38,7 +38,7 @@ const Customer = props => {
                 <Link to={`/ac/${ac._id}`}
                 style={{ fontWeight: 700 }}
                 >
-                  <div className="click">AC Description: {ac.acName}</div>
+                  <div className="click">AC Location: {ac.acName}</div>
                 </Link>
               </p>
               <div className="card-body">

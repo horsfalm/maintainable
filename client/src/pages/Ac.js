@@ -20,7 +20,7 @@ const Ac = props => {
       <div>
         <div className="card mb-3">
           <p className="card-header text-dark" style={{ fontWeight: 700 }} >
-              AC Description: {ac.acName}
+              AC Location: {ac.acName}
           </p>
           <div className="card-body">
               <div className="flex-row">
