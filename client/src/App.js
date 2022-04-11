@@ -1,33 +1,27 @@
+import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@apollo/client';
+import { setContext } from '@apollo/client/link/context';
 import React from 'react';
 
-import './App.css';
-import Header from './components/Header'
-import Logintech from './components/Logintech'
-import Loginemployee from './components/Loginemployee'
-import Home from './components/Home';
-import Employeedashboard from './components/Employeedashboard';
-import Techdashbord from './components/Techdashbord';
-import {
-  ApolloClient,
-  InMemoryCache,
-  ApolloProvider,
-  createHttpLink,
-} from '@apollo/client';
-import 'mdb-react-ui-kit/dist/css/mdb.min.css';
-import {
-  BrowserRouter as Router,
-  Routes,
-  Route,
-  
-} from "react-router-dom";
-import { setContext } from '@apollo/client/link/context';
-
+import Header from './components/Header';
+import Footer from './components/Footer';
+import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
+import Home from './pages/Home';
+import Login from './pages/Login';
+import Dashboard from './pages/Dashboard';
+import NoMatch from './pages/NoMatch';
+import Customer from './pages/Customer';
+import Ac from './pages/Ac';
+import Addac from './pages/Addac';
+import Report from './pages/Report';
+import Addreport from './pages/Addreport';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
+
 const authLink = setContext((_, { headers }) => {
   const token = localStorage.getItem('id_token');
+
   return {
     headers: {
       ...headers,
@@ -43,23 +37,27 @@ const client = new ApolloClient({
 function App() {
   return (
     <ApolloProvider client={client}>
-     
-     <Router>
-     <Header />
-      <Routes>
-        <Route path="/" exact element={<Home />} />
-        <Route path="/logintech" element={<Logintech />}/>
-        <Route path="/loginemployee" element={<Loginemployee />}/>
-        <Route path="/employeedashboard" element={<Employeedashboard />}/>
-        <Route path="/techdashbord" element={<Techdashbord />}/>
-        <Route path="/home" element={<Home />}/>
-      </Routes>
-    </Router>
+      <Router>
+      <div className='flex-column justify-flex-start min-100-vh'>
+        <Header />
+        <div className='container'>
+          <Switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/login" component={Login} />
+            <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/customer/:id" component={Customer} />
+            <Route exact path="/ac/:id" component={Ac} />
+            <Route exact path="/addac" component={Addac} />
+            <Route exact path="/report/:id" component={Report} />
+            <Route exact path="/ac/:id/addreport" component={Addreport} />
+            <Route component={NoMatch} />
+          </Switch>
+        </div>
+        <Footer />
+      </div>
+      </Router>
     </ApolloProvider>
-   
-    
   );
 }
-
 
 export default App;

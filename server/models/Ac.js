@@ -2,29 +2,43 @@ const { Schema, model } = require('mongoose');
 const dateFormat = require('../utils/dateFormat');
 
 const acSchema = new Schema(
-    {
-        createdAt: {
-            type: Date,
-            default: Date.now,
-            get: timestamp => dateFormat(timestamp)
-        },
-        // indoor AC info
-        inDoorAcBarnd: String,
-        inDoorModel:String,
-        inDoorserialNumber: Number,
-        // outdoor AC info
-        outDoorAcBarnd: String,
-        outDoorModel:String,
-        outDoorserialNumber: Number,
+  {
+    acName: {
+      type: String
     },
-    {
-        toJSON: {
-            getters: true
-        }
+    acBrand: {
+      type: String
+    },
+    outModel: {
+      type: String
+    },
+    outSerial: {
+      type: String
+    },
+    inModel: {
+      type: String
+    },
+    inSerial: {
+      type: String
+    },
+    createdAt: {
+      type: Date,
+      default: Date.now,
+      get: timestamp => dateFormat(timestamp)
+    },
+    reports: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Report'
+      }
+    ]
+  },
+  {
+    toJSON: {
+      getters: true
     }
+  }
 );
-
-
 
 const Ac = model('Ac', acSchema);
 

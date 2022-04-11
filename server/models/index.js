@@ -1,7 +1,6 @@
-const Tech = require('./Tech');
-const Employee = require('./Employee');
-const Customer = require('./Customer')
-const Ac = require('./Ac')
+const User = require('./User');
+const Customer = require('./Customer');
+const Ac = require('./Ac');
+const Report = require('./Report');
 
-
-module.exports = { Tech ,Employee, Customer, Ac };
+module.exports = { User, Customer, Ac, Report };
