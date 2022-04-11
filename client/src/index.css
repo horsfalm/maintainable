@@ -79,7 +79,7 @@ p {
 }
 
 a {
-  color: var(--dark);
+  color: var(--light);
   text-decoration: none;
 }
 

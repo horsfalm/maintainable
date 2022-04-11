@@ -15,7 +15,7 @@ const Report = props => {
     if (loading) {
         return <div>Loading...</div>;
     }
-console.log(report.reportText);
+
     return (
       <div>
         <div className="card mb-3">

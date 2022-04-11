@@ -16,6 +16,7 @@ const Addreport = () => {
             query: QUERY_REPORTS,
             data: { reports: [addReport, ...reports] }
             });
+        
         } catch (e) {
             console.error(e)
         }

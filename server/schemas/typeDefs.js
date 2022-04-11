@@ -48,6 +48,7 @@ type Query {
     user(username: String!): User
     reports: [Report]
     report(_id: ID!): Report
+    
 }
 
 type Mutation {
