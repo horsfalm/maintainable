@@ -26,7 +26,7 @@ const Customer = props => {
         <h5>{customer.address}</h5>
         <h5>{customer.phone}</h5>
         <button className="btn ml-auto bg-success">
-            <Link to={`/addac`}>
+            <Link to={`/customer/${customer._id}/addac`}>
             + AC
             </Link>
         </button>
@@ -34,13 +34,13 @@ const Customer = props => {
         <div>
           {customer.acs.map((ac) => (
             <div className="card mb-3">
-              <p className="card-header text-dark">
+              <div className="card-header">
                 <Link to={`/ac/${ac._id}`}
                 style={{ fontWeight: 700 }}
                 >
-                  <div className="click">AC Description: {ac.acName}</div>
+                  <div className="click">AC Location: {ac.acName}</div>
                 </Link>
-              </p>
+              </div>
               <div className="card-body">
               <p>AC ID: {ac._id}</p>
               <p>AC Brand: {ac.acBrand}</p>

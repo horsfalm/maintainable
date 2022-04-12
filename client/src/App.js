@@ -30,6 +30,7 @@ const authLink = setContext((_, { headers }) => {
     },
   };
 });
+
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
@@ -49,7 +50,7 @@ function App() {
             <Route exact path="/search" component={Search}  />
             <Route exact path="/customer/:id" component={Customer} />
             <Route exact path="/ac/:id" component={Ac} />
-            <Route exact path="/addac" component={Addac} />
+            <Route exact path="/customer/:id/addac" component={Addac} />
             <Route exact path="/report/:id" component={Report} />
             <Route exact path="/ac/:id/addreport" component={Addreport} />
             <Route component={NoMatch} />

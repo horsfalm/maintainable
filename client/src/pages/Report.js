@@ -15,12 +15,12 @@ const Report = props => {
     if (loading) {
         return <div>Loading...</div>;
     }
-console.log(report.reportText);
+
     return (
       <div>
         <div className="card mb-3">
-            <p className="card-header text-dark" style={{ fontWeight: 700 }} >Report ID: {report._id}
-            </p>
+            <div className="card-header" style={{ fontWeight: 700 }} >Report ID: {report._id}
+            </div>
             <div className="card-body">
                 <div className="flex-row">
                     <div style={{ width: 800 }}>
