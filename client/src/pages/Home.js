@@ -5,8 +5,8 @@ const Home = () => {
   return (
     <div
         id='intro-example'
-        className='p-5 text-center bg-image'
-        style={{ backgroundImage: "url('/background-img.png')", height: "600px" }}
+        className='mt-3 bg-image'
+        style={{ backgroundImage: "url('./MaintainabeCover.svg')", height: "800px" }}
       ></div>
   )
 
