@@ -11,40 +11,33 @@ const Header = () => {
 
   return (
     <header>
-      <nav class="navbar" role="navigation" aria-label="main navigation">
-        
-        <div class="navbar-brand">
+      <nav className="navbar" role="navigation" aria-label="main navigation">
+        <div className="navbar-brand">
           <Link to="/">
-       
-                <img class="m-2" src="./MaintainabeSighn.svg" alt="Maintainable Name SVG"/>
-            
+                <img className="m-2" src="./MaintainabeSighn.svg" alt="Maintainable Name SVG"/>
           </Link>
         </div>
-        
-        <div class="navbar-end">
-          <div class="navbar-item">
-            <div class="buttons">
-            
+        <div className="navbar-end">
+          <div className="navbar-item">
+            <div className="buttons">
               {Auth.loggedIn() ? (
                 <>
-                  <a class="button is-warning is-medium"><i className="fas fa-search"></i></a>
+                  <a className="button is-warning is-medium"><i className="fas fa-search"></i></a>
                     <Link to="/dashboard">Dashboard</Link>
                   <a href="/" onClick={logout}>Logout</a>
                 </>
               ) : (
                 <>
                 <Link to="/login">
-                  <a class="button is-warning is-medium">
+                  <a className="button is-warning is-medium">
                     Login
                   </a>
                 </Link>
                 </>
               )}
-            
             </div>
           </div>
         </div>
-
       </nav>
     </header>
   );
