@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, Redirect, useHistory } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_REPORT } from '../utils/mutations';
-import { QUERY_REPORTS } from '../utils/queries';
+import { QUERY_AC } from '../utils/queries';
 
 const Addreport = () => {
 
@@ -10,17 +10,17 @@ const Addreport = () => {
     const [characterCount, setCharacterCount] = useState(0);
     const [addReport, { error }] = useMutation(ADD_REPORT, { update(cache, { data: { addReport } }) {
         try {
-        const { reports } = cache.readQuery({ query: QUERY_REPORTS });
+        const { reports } = cache.readQuery({ query: QUERY_AC });
 
         cache.writeQuery({
-            query: QUERY_REPORTS,
+            query: QUERY_AC,
             data: { reports: [addReport, ...reports] }
             });
         
         } catch (e) {
             console.error(e)
         }
-    }
+    } 
 });
 
     const handleChange = event => {
@@ -33,7 +33,7 @@ const Addreport = () => {
     const handleFormSubmit = async event => {
         event.preventDefault();
         const acId = window.location.toString().split('/')[window.location.toString().split('/').length -2];
-        
+
         try {
             await addReport({
                 variables: { acId: acId, reportText }
