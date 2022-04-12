@@ -14,6 +14,7 @@ import Ac from './pages/Ac';
 import Addac from './pages/Addac';
 import Report from './pages/Report';
 import Addreport from './pages/Addreport';
+import Search from './pages/Search';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
@@ -45,6 +46,7 @@ function App() {
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
             <Route exact path="/dashboard" component={Dashboard} />
+            <Route exact path="/search" component={Search}  />
             <Route exact path="/customer/:id" component={Customer} />
             <Route exact path="/ac/:id" component={Ac} />
             <Route exact path="/addac" component={Addac} />
