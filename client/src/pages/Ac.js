@@ -1,7 +1,9 @@
 import React from 'react';
+import { withRouter, Redirect } from 'react-router-dom';
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_AC } from '../utils/queries';
+import Auth from '../utils/auth';
 
 const Ac = props => {
     const { id: acId } = useParams();
@@ -18,7 +20,8 @@ const Ac = props => {
 
     return (
       <div>
-        <div className="card mb-3">
+        {Auth.loggedIn() ? (
+          <div className="card mb-3">
           <div className="card-header" style={{ fontWeight: 700 }} >
               AC Location: {ac.acName}
           </div>
@@ -53,8 +56,14 @@ const Ac = props => {
               </div>
           </div>
         </div>
+        ) : (
+          <>
+            {/* need to redirect to home */}
+            <Redirect to="/login"/>
+          </>
+        )}
       </div>
     );
 };
 
-export default Ac
+export default withRouter(Ac);

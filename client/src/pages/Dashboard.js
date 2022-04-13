@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter, Route, Redirect } from 'react-router-dom';
+import { withRouter, Redirect } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_CUSTOMERS } from '../utils/queries';
 import CustomerList from '../components/CustomerList';
