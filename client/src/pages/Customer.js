@@ -21,7 +21,7 @@ const Customer = props => {
     console.log(customer.acs)
 
     return (
-      <div>
+      <div className='mb-5'>
         <div>
         <h2>{customer.name}</h2>
         <h5>{customer.address}</h5>

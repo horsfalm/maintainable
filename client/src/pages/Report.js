@@ -3,7 +3,9 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_REPORT } from '../utils/queries';
 
+
 const Report = props => {
+    
     const { id: reportId } = useParams();
 
     const { loading, data } = useQuery(QUERY_REPORT, {

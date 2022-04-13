@@ -1,30 +1,38 @@
 import React, { useState } from 'react';
 import { Link, Redirect, useHistory } from 'react-router-dom';
+import { useQuery } from "@apollo/client";
 
 import { useMutation } from '@apollo/client';
 import { ADD_REPORT } from '../utils/mutations';
-import { QUERY_AC } from '../utils/queries';
+import { QUERY_REPORTS } from '../utils/queries';
+
 
 
 
 const Addreport = () => {
+    const acIdd = window.location.toString().split('/')[window.location.toString().split('/').length -2];
+    function refreshPage(){ 
+        window.location.href = `/ac/${acIdd}`; 
+    }
+    
 
     const [reportText, setText] = useState('');
     const [characterCount, setCharacterCount] = useState(0);
     const [addReport, { error }] = useMutation(ADD_REPORT, { update(cache, { data: { addReport } }) {
         try {
-        const { reports } = cache.readQuery({ query: QUERY_AC });
+        const { reports } = cache.readQuery({ query: QUERY_REPORTS });
 
         cache.writeQuery({
-            query: QUERY_AC,
+            query: QUERY_REPORTS,
             data: { reports: [addReport, ...reports] }
             });
         
         } catch (e) {
             console.error(e)
         }
-    } 
+    }
 });
+
 
     const handleChange = event => {
         if (event.target.value.length <= 280) {
@@ -36,7 +44,7 @@ const Addreport = () => {
     const handleFormSubmit = async event => {
         event.preventDefault();
         const acId = window.location.toString().split('/')[window.location.toString().split('/').length -2];
-
+        
         try {
             await addReport({
                 variables: { acId: acId, reportText }
@@ -48,6 +56,7 @@ const Addreport = () => {
             console.error(e);
         }
     };
+    
 
     return (
         <div className='flex-row justify-space-between'>
@@ -57,7 +66,8 @@ const Addreport = () => {
                     {error && <span className="ml-2">Something went wrong ...</span>}</p>
                 <form className="justify-center justify-space-between-md align-stretch" onSubmit={handleFormSubmit}>
                     <textarea placeholder="Enter service report details ..." value={reportText} className="form-input col-12 col-md-9" onChange={handleChange} id="report"></textarea><br />
-                    <button  className="btn ml-auto bg-success" type="submit">Submit</button>
+                    <button onClick={refreshPage}  className="btn ml-auto bg-success" type="submit">Submit</button>
+                    
                 </form>
             </div>
         </div>

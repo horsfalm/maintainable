@@ -6,22 +6,22 @@ const { signToken } = require('../utils/auth');
 const resolvers = {
     Query: {
         customers: async () => {
-            return Customer.find().sort({ name: -1 }).populate('acs');
+            return Customer.find().sort({ name: -1 }).populate('acs').populate('reports');
         },
         customer: async (parent, { _id }) => {
             return Customer.findOne({ _id }).populate('acs')
         },
         acs: async () => {
-            return Ac.find().sort({ createdAt: -1 }).populate('reports')
+            return Ac.find().sort({ createdAt: -1 }).populate('reports').sort({ createdAt: -1 })
         },
         ac: async (parent, { _id }) => {
-            return Ac.findOne({ _id }).populate('reports')
+            return Ac.findOne({ _id }).populate('reports').sort({ createdAt: -1 })
         },
         reports: async () => {
             return Report.find().sort({ createdAt: -1 })
         },
         report: async (parent, { _id }) => {
-            return Report.findOne({ _id })
+            return Report.findOne({ _id }).sort({ createdAt: -1 })
         },
         users: async () => {
             return User.find()

@@ -1,8 +1,13 @@
 import React, { useState } from "react";
 import { useQuery } from "@apollo/client";
 import { QUERY_CUSTOMERS } from "../utils/queries";
-// import CustomerFilter from '../components/CustomerFilter';
 import { Link } from "react-router-dom";
+import {
+  MDBCard,
+  MDBCardHeader,
+  MDBCardBody,
+  MDBCardText,
+} from "mdb-react-ui-kit";
 
 const Search = () => {
   const { loading, data } = useQuery(QUERY_CUSTOMERS);
@@ -16,7 +21,7 @@ const Search = () => {
       <div>
         <input
           className="form-input"
-          placeholder="customer name"
+          placeholder="Customer name"
           type="text"
           onChange={(e) => setSearchInput(e.target.value)}
         />
@@ -32,22 +37,19 @@ const Search = () => {
       {customers
         .filter((customer) => customer.name.toLowerCase().includes(searchInput))
         .map((customer) => (
-          <div key={customer._id} className="card mb-3">
-            <p className="card-header text-dark">
-              <Link
-                to={`/customer/${customer._id}`}
-                style={{ fontWeight: 700 }}
-              >
-                <div className="click">{customer.name}</div>
+          <MDBCard style={{ maxWidth: "77rem" }}>
+            <MDBCardHeader>
+              <Link to={`/customer/${customer._id}`}>
+                <div> {customer.name}</div>
               </Link>
-            </p>
-            <div className="card-body flex-row">
-              <div style={{ width: 800 }}>
+            </MDBCardHeader>
+            <MDBCardBody>
+              <MDBCardText>
                 <p>{customer.address}</p>
-                <p>{customer.phone}</p>
-              </div>
-            </div>
-          </div>
+                <p>{customer.phone}</p>{" "}
+              </MDBCardText>
+            </MDBCardBody>
+          </MDBCard>
         ))}
     </div>
   );

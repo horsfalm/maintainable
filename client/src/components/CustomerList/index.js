@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { MDBCard, MDBCardBody, MDBCardHeader, MDBCardText, MDBBtn } from 'mdb-react-ui-kit';
+
 
 const CustomerList = ({ customers }) => {
   if (!customers.length) {
@@ -7,31 +9,28 @@ const CustomerList = ({ customers }) => {
   }
 
   return (
-    <div id="customer-list">
-      {customers &&
-        customers.map(customer => (
-          <div key={customer._id} className="card mb-3">
-            <div className="card-header">
-              <Link to={`/customer/${customer._id}`}
-              style={{ fontWeight: 700 }}>
-                <div className="click"> {customer.name}</div>
-              </Link>
-            </div>
-            <div className="card-body flex-row">
-              <div style={{ width: 800 }}>
-                <p>{customer.address}</p>
-                <p>{customer.phone}</p>
-              </div>
-              <button className="btn ml-auto bg-success">
-                Edit
-              </button>
-              <button className="btn ml-auto bg-danger">
-                Delete
-              </button>
-            </div>
-          </div>
-        ))}
-    </div>
+   
+    <>
+    {customers &&
+         customers.map(customer => (
+          <MDBCard style={{ maxWidth: "77rem" }}>
+          <MDBCardHeader>
+            <Link to={`/customer/${customer._id}`}>
+              <div> {customer.name}</div>
+            </Link>
+          </MDBCardHeader>
+          <MDBCardBody>
+            <MDBCardText>
+              <p>{customer.address}</p>
+              <p>{customer.phone}</p>{" "}
+              <MDBBtn className='btn ml-auto  bg-success' color='success'>Update</MDBBtn>
+            </MDBCardText>
+          </MDBCardBody>
+        </MDBCard>
+            
+
+     ))}
+    </>
   );
 };
 

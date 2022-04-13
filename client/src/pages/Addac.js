@@ -3,14 +3,17 @@ import { useParams, Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_AC } from '../utils/mutations';
 
+
 const Addac = () => {
+    const customerIdd = window.location.toString().split('/')[window.location.toString().split('/').length -2];
+
     // function refreshPage(){ 
-    //     window.location.reload(); 
+    //     window.location.href = `/customer/${customerIdd}`; 
     // }
     const [formState, setFormState] = useState({ acName: '', acBrand: '', outModel: '', outSerial: '', inModel: '', inSerial: ''});
     const { acName, acBrand, outModel, outSerial, inModel, inSerial } = formState;
     const [addAc, { error }] = useMutation(ADD_AC);
-    const customerIdd = window.location.toString().split('/')[window.location.toString().split('/').length -2];
+    console.log(customerIdd);
     const handleChange = event => {
         setFormState({...formState, [event.target.name]: event.target.value })
     }
@@ -21,6 +24,7 @@ const Addac = () => {
         console.log(formState);
         console.log(customerId);
 
+
         try {
             await addAc({
                 variables: { customerId: customerId, ...formState }
@@ -29,6 +33,8 @@ const Addac = () => {
         } catch (e) {
           console.error(e);
       }
+      window.location.href = `/customer/${customerId}`; 
+
     };
     
     
@@ -75,7 +81,7 @@ const Addac = () => {
                         value={formState.inSerial}
                     /><br />
                     
-                    <Link to={`/customer/${customerIdd}`} 
+                    <button  
                         className='btn ml-auto w-100 bg-success' 
                         type='submit'
                         // onClick={() => setFormState('')}
@@ -83,7 +89,7 @@ const Addac = () => {
                         
                     >
                         Submit
-                    </Link>
+                    </button>
                 </form>
             </div>
         </div>

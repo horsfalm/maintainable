@@ -22,6 +22,12 @@ const customerSchema = new Schema(
         type: Schema.Types.ObjectId,
         ref: 'Ac'
       }
+    ],
+    reports: [
+      {
+        type: Schema.Types.ObjectId,
+        ref: 'Report'
+      }
     ]
   },
   {
