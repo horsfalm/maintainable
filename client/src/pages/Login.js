@@ -35,7 +35,7 @@ const Login = (props) => {
 
   return (
     
-    <main className='is-flex is-flex-direction-row is-justify-content-center m-6' style={{ backgroundImage: "url('./MaintainabeLogin.svg')", backgroundSize: "cover", height: "700px"  }}>
+    <main className='is-flex is-flex-direction-row is-justify-content-center m-6' style={{ backgroundImage: "url('./MaintainabeLogin.svg')", backgroundSize: "cover", height: "43rem"  }}>
       <div className='col-6 '>
         <div className='card'>
           <h4 className='card-header'>Login</h4>
