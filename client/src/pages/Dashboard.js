@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter, Route, Redirect } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_CUSTOMERS } from '../utils/queries';
 import CustomerList from '../components/CustomerList';
@@ -13,27 +13,24 @@ const Dashboard = () => {
     <main>
       {Auth.loggedIn() ? (
         <>
-        
-            <div className='flex-row justify-space-between'>
-              <div className='col-12 mb-3'>
-                {loading ? (
-                  <div>Loading ...</div>
-                ) : (
-                  <CustomerList customers={customers}/>
-                )}
-                </div>
-            </div>
-        
+          <div className='flex-row justify-space-between'>
+            <div className='col-12 mb-3'>
+              {loading ? (
+                <div>Loading ...</div>
+              ) : (
+                <CustomerList customers={customers}/>
+              )}
+              </div>
+          </div>
         </>
       ) : (
         <>
-
-        {/* need to redirect to home */}
-        <Link to="/"></Link>
+          {/* need to redirect to home */}
+          <Redirect to="/login"/>
         </>
       )}
     </main>
   );
 };
 
-export default Dashboard;
+export default withRouter(Dashboard);
