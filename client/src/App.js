@@ -2,6 +2,9 @@ import { ApolloProvider, ApolloClient, InMemoryCache, createHttpLink } from '@ap
 import { setContext } from '@apollo/client/link/context';
 import React from 'react';
 
+import { Redirect } from 'react-router-dom';
+import Auth from './utils/auth';
+
 import Header from './components/Header';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
@@ -43,18 +46,27 @@ function App() {
       <div className='flex-column justify-flex-start min-100-vh'>
         <Header />
         <div className='container'>
-          <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
-            <Route exact path="/dashboard" component={Dashboard} />
-            <Route exact path="/search" component={Search}  />
-            <Route exact path="/customer/:id" component={Customer} />
-            <Route exact path="/ac/:id" component={Ac} />
-            <Route exact path="/customer/:id/addac" component={Addac} />
-            <Route exact path="/report/:id" component={Report} />
-            <Route exact path="/ac/:id/addreport" component={Addreport} />
-            <Route component={NoMatch} />
-          </Switch>
+          {Auth.loggedIn() ? (
+            <Switch>
+              <Route exact path="/" component={Home} />
+              <Route exact path="/login" component={Login} />
+              <Route exact path="/dashboard" component={Dashboard} />
+              <Route exact path="/search" component={Search}  />
+              <Route exact path="/customer/:id" component={Customer} />
+              <Route exact path="/ac/:id" component={Ac} />
+              <Route exact path="/customer/:id/addac" component={Addac} />
+              <Route exact path="/report/:id" component={Report} />
+              <Route exact path="/ac/:id/addreport" component={Addreport} />
+              <Route component={NoMatch} />
+            </Switch>
+          ) : (
+            <>
+              {/* need to redirect to home */}
+              <Redirect to="/login"/>
+            </>
+          )}
         </div>
         <Footer />
       </div>
