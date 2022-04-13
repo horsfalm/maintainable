@@ -3,7 +3,6 @@ import { useParams, Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';
 import { ADD_AC } from '../utils/mutations';
 
-
 const Addac = () => {
     // function refreshPage(){ 
     //     window.location.reload(); 
