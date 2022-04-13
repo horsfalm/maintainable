@@ -30,7 +30,8 @@ const Dashboard = () => {
         <>
 
         {/* need to redirect to home */}
-        <Link to="/login"></Link>
+        {/* <Link to="/login"></Link> */}
+        {window.location.href = "/login"}
         </>
       )}
     </main>
