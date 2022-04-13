@@ -1,8 +1,11 @@
 import React, { useState } from 'react';
 import { Link, Redirect, useHistory } from 'react-router-dom';
+
 import { useMutation } from '@apollo/client';
 import { ADD_REPORT } from '../utils/mutations';
 import { QUERY_REPORTS } from '../utils/queries';
+
+
 
 const Addreport = () => {
 
@@ -54,7 +57,7 @@ const Addreport = () => {
                     {error && <span className="ml-2">Something went wrong ...</span>}</p>
                 <form className="justify-center justify-space-between-md align-stretch" onSubmit={handleFormSubmit}>
                     <textarea placeholder="Enter service report details ..." value={reportText} className="form-input col-12 col-md-9" onChange={handleChange} id="report"></textarea><br />
-                    <button className="btn ml-auto bg-success" type="submit">Submit</button>
+                    <button  className="btn ml-auto bg-success" type="submit">Submit</button>
                 </form>
             </div>
         </div>

@@ -5,6 +5,7 @@ import { QUERY_CUSTOMER } from '../utils/queries';
 import { Link } from 'react-router-dom';
 
 const Customer = props => {
+  
     const { id: customerId } = useParams();
 
     const { loading, data } = useQuery(QUERY_CUSTOMER, {

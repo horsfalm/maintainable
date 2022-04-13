@@ -52,6 +52,7 @@ query getAc($_id: ID!) {
       reportText
       createdAt
     }
+    
   }
 }
 `;

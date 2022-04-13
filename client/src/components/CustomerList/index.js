@@ -14,7 +14,7 @@ const CustomerList = ({ customers }) => {
             <div className="card-header">
               <Link to={`/customer/${customer._id}`}
               style={{ fontWeight: 700 }}>
-                <div className="click">Customer: {customer.name}</div>
+                <div className="click"> {customer.name}</div>
               </Link>
             </div>
             <div className="card-body flex-row">

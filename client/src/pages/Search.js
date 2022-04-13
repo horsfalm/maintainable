@@ -26,7 +26,7 @@ const Search = () => {
       {/* {loading ? (
             <div>Loading ...</div>
           ) : (
-            <CustomerFilter customers={customers}/>
+            <CustomerFilter customers={customers, searchInput}/>
           )} */}
 
       {customers

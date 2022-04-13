@@ -1,19 +1,22 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-const CustomerList = ({ customers }) => {
+const CustomerList = ({ customers, searchInput }) => {
   if (!customers.length) {
     return <h3>No Customers Yet</h3>;
   }
 
   return (
     <div id="customer-list">
-      {customers &&
-        customers.map(customer => (
+      {customers
+        .filter((customer) => customer.name.toLowerCase().includes(searchInput))
+        .map((customer) => (
           <div key={customer._id} className="card mb-3">
             <p className="card-header text-dark">
-              <Link to={`/customer/${customer._id}`}
-              style={{ fontWeight: 700 }}>
+              <Link
+                to={`/customer/${customer._id}`}
+                style={{ fontWeight: 700 }}
+              >
                 <div className="click">{customer.name}</div>
               </Link>
             </p>
