@@ -112,6 +112,12 @@ li {
   font-size: 1.1rem;
   margin-top: 0;
 }
+ul {
+  transform: rotate(180deg);
+}
+ul > li {
+  transform: rotate(-180deg);
+}
 
 #report {
   min-height: 500px;

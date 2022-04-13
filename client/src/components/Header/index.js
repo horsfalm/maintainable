@@ -20,33 +20,10 @@ const Header = () => {
   };
   const [showNav, setShowNav] = useState(false);
   return (
-    // <header className="bg-success mb-4 py-2 flex-row align-center">
-    //   <div className="container flex-row justify-space-between-lg justify-center align-center">
-    //     <Link to="/">
-    //       <h1>Maintainable</h1>
-    //     </Link>
-
-    //     <nav className="text-center">
-    //       {Auth.loggedIn() ? (
-    //         <>
-    //           <Link to="/search"><i className="fas fa-search"></i></Link>
-    //           <Link to="/dashboard">Dashboard</Link>
-    //           <a href="/" onClick={logout}>Logout</a>
-    //         </>
-    //       ) : (
-    //         <>
-    //         <Link to="/login">Login</Link>
-    //         </>
-    //       )}
-    //       </nav>
-    //   </div>
-    // </header>
-
-
     <>
        <MDBNavbar expand='lg' light bgColor='light'>
       <MDBContainer fluid>
-        <MDBNavbarBrand href='/'>Home</MDBNavbarBrand>
+        <MDBNavbarBrand href='/' ><MDBIcon className='ms-1' icon='home' size='2x' /></MDBNavbarBrand>
         <MDBNavbarToggler
           type='button'
           aria-expanded='false'
@@ -61,25 +38,22 @@ const Header = () => {
           
            {Auth.loggedIn() ? (
              <>
-
-
-
             <MDBNavbarItem>
-              <MDBNavbarLink href='/dashboard'>Dashboard</MDBNavbarLink>
+              <MDBNavbarLink className="fw-bolder" href="/" onClick={logout} tabIndex={-1} aria-disabled='true'>
+                Logout
+              </MDBNavbarLink>
+            </MDBNavbarItem>
+            <MDBNavbarItem>
+              <MDBNavbarLink className="fw-bolder" href='/dashboard'>Dashboard</MDBNavbarLink>
             </MDBNavbarItem>
             <MDBNavbarItem>
               <MDBNavbarLink href='/search'><MDBIcon fas icon="search" /></MDBNavbarLink>
-            </MDBNavbarItem>
-            <MDBNavbarItem>
-              <MDBNavbarLink  href="/" onClick={logout} tabIndex={-1} aria-disabled='true'>
-                Logout
-              </MDBNavbarLink>
             </MDBNavbarItem>
             </>
            ) : (
            <>
            <MDBNavbarItem>
-              <MDBNavbarLink href='/login'>Login</MDBNavbarLink>
+              <MDBNavbarLink className="fw-bolder" href='/login'>Login</MDBNavbarLink>
             </MDBNavbarItem>
              
              </>

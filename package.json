@@ -16,6 +16,8 @@
     "concurrently": "^7.1.0"
   },
   "dependencies": {
+    "@react-google-maps/api": "^2.8.1",
+    "dotenv": "^16.0.0",
     "mdb-react-ui-kit": "^3.0.0"
   }
 }
