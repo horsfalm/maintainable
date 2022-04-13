@@ -1,11 +1,18 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 import Auth from '../../utils/auth';
 
 const Header = () => {
-  const logout = event => {
+
+  const handleLogout = async event => {
     event.preventDefault();
-    Auth.logout();
+    try{
+
+      await Auth.logout();
+      
+    }catch (e) {
+      console.error(e);
+    }
   };
 
   return (
@@ -20,7 +27,7 @@ const Header = () => {
             <>
               <Link to="/search"><i className="fas fa-search"></i></Link>
               <Link to="/dashboard">Dashboard</Link>
-              <a href="/" onClick={logout}>Logout</a>
+              <a href="/" onClick={handleLogout}>Logout</a>
             </>
           ) : (
             <>
@@ -33,4 +40,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default withRouter(Header);

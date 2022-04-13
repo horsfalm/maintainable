@@ -1,7 +1,9 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_CUSTOMERS } from '../utils/queries';
 import CustomerList from '../components/CustomerList';
+import Auth from '../utils/auth';
 
 const Dashboard = () => {
   const { loading, data } = useQuery(QUERY_CUSTOMERS);
@@ -9,15 +11,27 @@ const Dashboard = () => {
 
   return (
     <main>
-      <div className='flex-row justify-space-between'>
-        <div className='col-12 mb-3'>
-          {loading ? (
-            <div>Loading ...</div>
-          ) : (
-            <CustomerList customers={customers}/>
-          )}
-          </div>
-      </div>
+      {Auth.loggedIn() ? (
+        <>
+        
+            <div className='flex-row justify-space-between'>
+              <div className='col-12 mb-3'>
+                {loading ? (
+                  <div>Loading ...</div>
+                ) : (
+                  <CustomerList customers={customers}/>
+                )}
+                </div>
+            </div>
+        
+        </>
+      ) : (
+        <>
+
+        {/* need to redirect to home */}
+        <Link to="/"></Link>
+        </>
+      )}
     </main>
   );
 };
