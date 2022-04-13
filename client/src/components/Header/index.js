@@ -22,16 +22,16 @@ const Header = () => {
             <div className="buttons">
               {Auth.loggedIn() ? (
                 <>
-                  <a className="button is-warning is-medium"><i className="fas fa-search"></i></a>
+                  <button className="button is-warning is-medium"><i className="fas fa-search"></i></button>
                     <Link to="/dashboard">Dashboard</Link>
                   <a href="/" onClick={logout}>Logout</a>
                 </>
               ) : (
                 <>
                 <Link to="/login">
-                  <a className="button is-warning is-medium">
+                  <button className="button is-warning is-medium">
                     Login
-                  </a>
+                  </button>
                 </Link>
                 </>
               )}
