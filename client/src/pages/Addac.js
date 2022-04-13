@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { withRouter, Redirect } from 'react-router-dom';
+import { Redirect } from 'react-router-dom';
 import Auth from '../utils/auth';
 import { useParams, Link } from 'react-router-dom';
 import { useMutation } from '@apollo/client';

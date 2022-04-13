@@ -46,8 +46,10 @@ function App() {
       <div className='flex-column justify-flex-start min-100-vh'>
         <Header />
         <div className='container'>
+          <Switch>
             <Route exact path="/" component={Home} />
             <Route exact path="/login" component={Login} />
+          </Switch>
           {Auth.loggedIn() ? (
             <Switch>
               <Route exact path="/" component={Home} />
