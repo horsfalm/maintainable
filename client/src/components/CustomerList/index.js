@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { MDBCard, MDBCardBody, MDBCardHeader, MDBCardText, MDBBtn } from 'mdb-react-ui-kit';
+import { MDBCard, MDBCardBody, MDBCardHeader, MDBCardText, MDBBtn,MDBNavbarLink,MDBIcon } from 'mdb-react-ui-kit';
 
 
 const CustomerList = ({ customers }) => {
@@ -24,10 +24,10 @@ const CustomerList = ({ customers }) => {
               <p>{customer.address}</p>
               <p>{customer.phone}</p>{" "}
               <MDBBtn className='btn ml-auto  bg-success' color='success'>Update</MDBBtn>
+           
             </MDBCardText>
           </MDBCardBody>
-        </MDBCard>
-            
+        </MDBCard>      
 
      ))}
     </>

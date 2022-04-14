@@ -3,6 +3,8 @@ import { useParams } from 'react-router-dom';
 import { useQuery } from '@apollo/client';
 import { QUERY_CUSTOMER } from '../utils/queries';
 import { Link } from 'react-router-dom';
+import { MDBNavbarLink,MDBIcon } from 'mdb-react-ui-kit';
+
 
 const Customer = props => {
   
@@ -31,6 +33,9 @@ const Customer = props => {
             + AC
             </Link>
         </button>
+        <br />
+        <button className="btn ml-auto bg-success"> <MDBNavbarLink href='/payment'><MDBIcon fas icon="credit-card" /></MDBNavbarLink></button>
+        
         </div><br />
         <div>
           {customer.acs.map((ac) => (
@@ -41,6 +46,7 @@ const Customer = props => {
                 >
                   <div className="click">AC Location: {ac.acName}</div>
                 </Link>
+               
               </div>
               <div className="card-body">
               <p>AC ID: {ac._id}</p>
