@@ -29,12 +29,12 @@ const Report = props => {
                         <p>{report.reportText}</p>
                         <p>{report.createdAt}</p>
                     </div>
-                    <button className="btn ml-auto bg-success">
+                    {/* <button className="btn ml-auto bg-success">
                         Edit
                     </button>
                     <button className="btn ml-auto bg-danger">
                         Delete
-                    </button>
+                    </button> */}
                 </div>
             </div> 
         </div>

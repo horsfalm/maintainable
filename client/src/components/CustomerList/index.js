@@ -23,7 +23,7 @@ const CustomerList = ({ customers }) => {
             <MDBCardText>
               <p>{customer.address}</p>
               <p>{customer.phone}</p>{" "}
-              <MDBBtn className='btn ml-auto  bg-success' color='success'>Update</MDBBtn>
+              {/* <MDBBtn className='btn ml-auto  bg-success' color='success'>Update</MDBBtn> */}
            
             </MDBCardText>
           </MDBCardBody>
