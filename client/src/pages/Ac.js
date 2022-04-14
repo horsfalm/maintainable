@@ -37,7 +37,7 @@ const Ac = props => {
               </button>
               </div>
               <div className="flex-row">
-                <p>Service Reports:</p>
+                <p>Reports:</p>
               <div style={{ width: 800 }}>{ac.reports.map((report) => (
                 <ul>
                   <li className="click"><Link to={`/report/${report._id}`}>

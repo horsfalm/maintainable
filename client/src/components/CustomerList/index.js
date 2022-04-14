@@ -12,7 +12,7 @@ const CustomerList = ({ customers }) => {
    
     <>
     <div>
-    <MDBBtn className='btn ml-auto bg-success' color='success'>+ Customer</MDBBtn><br/><br/>
+    <MDBBtn className='btn ml-auto bg-success' color='success'><Link to={`/addcustomer`}>+ Customer</Link></MDBBtn><br/><br/>
     </div>
     {customers &&
          customers.map(customer => (

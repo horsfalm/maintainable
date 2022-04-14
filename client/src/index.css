@@ -79,7 +79,7 @@ p {
 }
 
 a {
-  color: var(--light);
+  color: var(--dark);
   text-decoration: none;
 }
 
@@ -112,15 +112,21 @@ li {
   font-size: 1.1rem;
   margin-top: 0;
 }
+
 ul {
   transform: rotate(180deg);
 }
+
 ul > li {
   transform: rotate(-180deg);
 }
 
 #report {
   min-height: 500px;
+}
+
+#no-match {
+  color: var(--light);
 }
 
 .page-title {
@@ -143,7 +149,7 @@ ul > li {
   outline: none;
   background-color: var(--secondary);
   transition: all 0.5s;
-  width: 110px;
+  width: 130px;
   height: 55px;
   text-transform: none;
 }
