@@ -11,6 +11,9 @@ const CustomerList = ({ customers }) => {
   return (
    
     <>
+    <div>
+    <MDBBtn className='btn ml-auto bg-success' color='success'>+ Customer</MDBBtn><br/><br/>
+    </div>
     {customers &&
          customers.map(customer => (
           <MDBCard style={{ maxWidth: "77rem" }}>
