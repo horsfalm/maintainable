@@ -2,6 +2,8 @@
 
 ![](https://img.shields.io/badge/Database-MongoDB-yellow?style=flat-square&logo=mongoDB)  ![](https://img.shields.io/badge/npm%20package-express-orange?style=flat-square&logo=npm) ![](https://img.shields.io/badge/npm%20package-mongoose-cyan?style=flat-square&logo=npm)
 
+![android-chrome-192x192](https://user-images.githubusercontent.com/92696470/163481736-9852e55d-5d09-4177-a33c-ca0756cb2e33.png)
+
 ## Table of Contents:  
 [1. Description](#Description)  
 [2. Acceptance Criteria](#Acceptance-Criteria)  
@@ -108,4 +110,5 @@ aaanees7@gmail.com
 
 for additional questions
 
+![customer-screen-shot](https://user-images.githubusercontent.com/92696470/163481817-a32be29e-e89f-4c72-ae1a-b79b068192ae.PNG)
 
