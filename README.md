@@ -39,23 +39,23 @@ This is an application for use in recording the details and maintenance history 
 Testing API calls with ApolloServer (example)  
 
 ---
-uery {
-  customers {
-    _id
-    name
-    address
-    phone
-    acs {
-      _id
-      acName
-      acBrand
-      outModel
-      outSerial
-      inModel
-      inSerial
-      createdAt
-      }
-    }
+query {
+    customers {
+        _id
+        name
+        address
+        phone
+        acs {
+            _id
+            acName
+            acBrand
+            outModel
+            outSerial
+            inModel
+            inSerial
+            createdAt
+            }
+        }
     acs {
         _id
         acName
@@ -69,14 +69,14 @@ uery {
             _id
             reportText
             createdAt
+            }
+        }
+    users {
+        _id
+        username
+        email
         }
     }
-    users {
-      _id
-      username
-      email
-    }
-  }
 
 ## License Details: 
 
@@ -95,10 +95,17 @@ Abdurraouf Sadi, Alik Margaryan, Chuong Vo, Tri Nguyen, Ahmad Anees and Mark Hor
 Email contributors at:  
 
 horsfalm@gmail.com
+
 A8sadi@gmail.com
+
 margaryanalik7@gmail.com
+
 vohoang2005@gmail.com
+
 tri.nguyen1086@gmail.com
+
 aaanees7@gmail.com
 
 for additional questions
+
+
