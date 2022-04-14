@@ -2,8 +2,6 @@
 
 ![](https://img.shields.io/badge/Database-MongoDB-yellow?style=flat-square&logo=mongoDB)  ![](https://img.shields.io/badge/npm%20package-express-orange?style=flat-square&logo=npm) ![](https://img.shields.io/badge/npm%20package-mongoose-cyan?style=flat-square&logo=npm)
 
-![](/public/android-chrome-512x512)
-
 ## Table of Contents:  
 [1. Description](#Description)  
 [2. Acceptance Criteria](#Acceptance-Criteria)  
@@ -42,7 +40,7 @@ Testing API calls with ApolloServer (example)
 
 ---
 query {
-  customers {
+    customers {
     _id
     name
     address
@@ -105,4 +103,4 @@ aaanees7@gmail.com
 
 for additional questions
 
-![](/public/customer-screen-shot)
+
