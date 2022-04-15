@@ -40,6 +40,9 @@ This is an application for use in recording the details and maintenance history 
     U should be capital 
     User@gmail.com
     12345678
+    
+    To test Stripe payment use card:
+    4242 424 242 424
 ```
 
 ## Tests:  
@@ -97,6 +100,7 @@ Abdurraouf Sadi, Alik Margaryan, Chuong Vo, Tri Nguyen, Ahmad Anees and Mark Hor
 ## Submission:
 
 [Github repository](https://github.com/horsfalm/maintainable)
+[Heroku deployment](https://maintainable.herokuapp.com/)
 
 ## Questions:
 
@@ -115,9 +119,6 @@ tri.nguyen1086@gmail.com
 aaanees7@gmail.com
 
 for additional questions
-
-## Live App
-[maintainable](https://maintainable.herokuapp.com/)
 
 ## Screenshot
 ![customer-screen-shot](https://user-images.githubusercontent.com/92696470/163481817-a32be29e-e89f-4c72-ae1a-b79b068192ae.PNG)
