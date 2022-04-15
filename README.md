@@ -35,6 +35,12 @@ This is an application for use in recording the details and maintenance history 
 ```
     $ npm run develop
 ```
+4. User and password
+```
+    U should be capital 
+    User@gmail.com
+    12345678
+```
 
 ## Tests:  
 
