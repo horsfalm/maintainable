@@ -34,7 +34,7 @@ const Login = (props) => {
   };
 
   return (
-    <main className='flex-row justify-center ' style={{marginTop: ' 100px', marginBottom:'130px'}}>
+    <main className='flex-row justify-center ' style={{marginTop: ' 245px', marginBottom:'245px'}}>
       <div className='col-12 col-md-6'>
         <div className='card'>
           <h4 className='card-header'>Login</h4>

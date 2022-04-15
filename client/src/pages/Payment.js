@@ -15,8 +15,8 @@ function Payment() {
         className="App"
         style={{
           maxWidth: "50rem",
-          marginTop: " 110px",
-          marginBottom: "150px",
+          marginTop: " 260px",
+          marginBottom: "280px",
         }}
       >
         <MDBCardBody>
