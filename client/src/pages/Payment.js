@@ -1,21 +1,34 @@
-import React from 'react'
-import { useState } from 'react';
-import StripeContainer from '../components/StripeContainer';
+import React from "react";
+import StripeContainer from "../components/StripeContainer";
+import {
+  MDBCard,
+  MDBCardBody,
+  MDBCardTitle,
+  MDBCardText,
+  
+} from "mdb-react-ui-kit";
 
 function Payment() {
-  
-   
-	return (
-		<div className='App'>
-			<h1 className='h1'>Maintainable</h1>
-      <p className='h1'>
-        Your payment for the service is going to be 50$
-      </p>
-				<StripeContainer />
-				
-		</div>
-	);
-
+  return (
+    <>
+      <MDBCard
+        className="App"
+        style={{
+          maxWidth: "50rem",
+          marginTop: " 110px",
+          marginBottom: "150px",
+        }}
+      >
+        <MDBCardBody>
+          <MDBCardTitle>Maintainable</MDBCardTitle>
+          <MDBCardText>
+            Your payment for the service is going to be 50$
+          </MDBCardText>
+          <StripeContainer />
+        </MDBCardBody>
+      </MDBCard>
+    </>
+  );
 }
 
-export default Payment
+export default Payment;

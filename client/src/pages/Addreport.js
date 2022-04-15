@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { Link, Redirect, useHistory } from 'react-router-dom';
-import { useQuery } from "@apollo/client";
+
 
 import { useMutation } from '@apollo/client';
 import { ADD_REPORT } from '../utils/mutations';

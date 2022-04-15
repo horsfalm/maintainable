@@ -1,6 +1,11 @@
 import { CardElement, useElements, useStripe } from "@stripe/react-stripe-js"
 import axios from "axios"
 import React, { useState } from 'react'
+import {
+   
+    MDBCardText,
+    
+  } from "mdb-react-ui-kit";
 
 
 const CARD_OPTIONS = {
@@ -72,7 +77,10 @@ export default function PaymentForm() {
         :
        <div>
            <br />
-           <h2>Thank you,your payment has been approved</h2>
+           
+           <MDBCardText>
+           Thank you,your payment has been approved
+          </MDBCardText>
        </div> 
         }
             

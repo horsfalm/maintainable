@@ -3,7 +3,6 @@ import { useQuery } from '@apollo/client';
 import { QUERY_CUSTOMERS } from '../utils/queries';
 import CustomerList from '../components/CustomerList';
 import Auth from '../utils/auth';
-import { Link } from 'react-router-dom';
 
 
 const Dashboard = () => {

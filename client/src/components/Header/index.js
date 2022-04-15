@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
 import Auth from '../../utils/auth';
 import {
   MDBContainer,
@@ -23,7 +22,7 @@ const Header = () => {
     <>
        <MDBNavbar expand='lg' light bgColor='light'>
       <MDBContainer fluid>
-        <MDBNavbarBrand href='/' ><MDBIcon className='ms-1' icon='home' size='2x' /></MDBNavbarBrand>
+        <MDBNavbarBrand href='/' ><MDBIcon className='ms-1' icon='home' size='1x' /></MDBNavbarBrand>
         <MDBNavbarToggler
           type='button'
           aria-expanded='false'
