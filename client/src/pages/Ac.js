@@ -29,16 +29,16 @@ const Ac = props => {
                   <p>Outdoor Model: {ac.outModel} / Outdoor Serial: {ac.outSerial}</p>
                   <p>Indoor Model: {ac.inModel} / Indoor Serial: {ac.inSerial}</p>
                 </div>
-              <button className="btn ml-auto bg-success">
+              {/* <button className="btn ml-auto bg-success">
                 Edit
               </button>
               <button className="btn ml-auto bg-danger">
                 Delete
-              </button>
+              </button> */}
               </div>
               <div className="flex-row">
-                <p>Service Reports:</p>
-              <div style={{ width: 800 }}>{ac.reports.map((report) => (
+                <p style={{ width: 200 }}>Service Reports:</p>
+              <div style={{ width: 600 }}>{ac.reports.map((report) => (
                 <ul>
                   <li className="click"><Link to={`/report/${report._id}`}>
                   {report.createdAt}</Link></li>

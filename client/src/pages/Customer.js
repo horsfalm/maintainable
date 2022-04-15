@@ -24,19 +24,19 @@ const Customer = props => {
 
     return (
       <div className='mb-5'>
-        <div>
-        <h2>{customer.name}</h2>
-        <h5>{customer.address}</h5>
-        <h5>{customer.phone}</h5>
-        <button className="btn ml-auto bg-success">
+        <div className="flex-row">
+          <div style={{ width: 900 }}>
+            <h2>{customer.name}</h2>
+            <h5>{customer.address}</h5>
+            <h5>{customer.phone}</h5>
+          </div>
+          <button className="btn ml-auto bg-success">
             <Link to={`/customer/${customer._id}/addac`}>
             + AC
             </Link>
-        </button>
-        <br />
-        <button className="btn ml-auto bg-success"> <MDBNavbarLink href='/payment'><MDBIcon fas icon="credit-card" /></MDBNavbarLink></button>
-        
-        </div><br />
+          </button>
+          <button className="btn ml-auto bg-success"> <MDBNavbarLink href='/payment'><MDBIcon fas icon="credit-card" /></MDBNavbarLink></button>
+          </div><br />
         <div>
           {customer.acs.map((ac) => (
             <div className="card mb-3">
